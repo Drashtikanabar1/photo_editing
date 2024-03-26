@@ -19,6 +19,7 @@ class ImagePickerController extends GetxController {
     final pickedFile = await picker.pickImage(source: ImageSource.gallery);
     if (pickedFile != null) {
       imageModel.value.imagePath = pickedFile.path;
+      savedEditedFile = pickedFile;
       log("imageModel.value.imagePath ${imageModel.value.imagePath}");
       update();
     }

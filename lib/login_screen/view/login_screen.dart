@@ -1,5 +1,5 @@
 import 'package:camera_functions/login_screen/model/authanitaction_model.dart';
-import 'package:camera_functions/signUp/view/signin.dart';
+import 'package:camera_functions/signUp/view/sing_up_screen.dart';
 import 'package:camera_functions/styles/app_colors.dart';
 import 'package:camera_functions/utils/enums/enum.dart';
 import 'package:camera_functions/utils/enums/viewStatus.dart';
@@ -7,6 +7,7 @@ import 'package:camera_functions/widgets/custom_button.dart';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:get/get.dart';
 
 class LoginScreen extends StatelessWidget {
@@ -103,8 +104,13 @@ class LoginScreen extends StatelessWidget {
               : CustomButton(
                   width: 150.w,
                   onTap: () {
-                    authController.login(
-                        emailController.text, passwordController.text);
+                    if (emailController.text.isNotEmpty &&
+                        passwordController.text.isNotEmpty) {
+                      authController.login(
+                          emailController.text, passwordController.text);
+                    } else {
+                      Fluttertoast.showToast(msg: "Enter the Deatils");
+                    }
                   },
                   borderRadius: 20,
                   bgColor: AppColors.loginMessage,

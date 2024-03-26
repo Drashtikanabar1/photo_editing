@@ -1,6 +1,6 @@
 import 'package:camera_functions/image_screen/image_view/image_view.dart';
 
-import 'package:camera_functions/signUp/view/signin.dart';
+import 'package:camera_functions/signUp/view/sing_up_screen.dart';
 import 'package:camera_functions/login_screen/view/login_screen.dart';
 import 'package:camera_functions/splash_screen.dart';
 import 'package:firebase_core/firebase_core.dart';

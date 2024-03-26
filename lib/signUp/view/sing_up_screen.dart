@@ -4,43 +4,8 @@ import 'package:camera_functions/styles/app_colors.dart';
 import 'package:camera_functions/widgets/custom_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:get/get.dart';
-
-// class SignupScreen extends StatelessWidget {
-//   final AuthController authController = Get.put(AuthController());
-
-//   final TextEditingController emailController = TextEditingController();
-//   final TextEditingController passwordController = TextEditingController();
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       appBar: AppBar(title: Text('Signup')),
-//       body: Padding(
-//         padding: EdgeInsets.all(20.0),
-//         child: Column(
-//           mainAxisAlignment: MainAxisAlignment.center,
-//           children: [
-//             TextField(
-//               controller: emailController,
-//               decoration: InputDecoration(labelText: 'Email'),
-//             ),
-//             TextField(
-//               controller: passwordController,
-//               decoration: InputDecoration(labelText: 'Password'),
-//               obscureText: true,
-//             ),
-//             ElevatedButton(
-//               onPressed: () => authController.signup(emailController.text, passwordController.text),
-//               child: Text('Signup'),
-//             ),
-//           ],
-//         ),
-//       ),
-//     );
-//   }
-// }
-// import 'package:flutter/material.dart';
 
 class SignupPage extends StatelessWidget {
   SignupPage({super.key});
@@ -139,8 +104,16 @@ class SignupPage extends StatelessWidget {
                 Container(
                     padding: const EdgeInsets.only(top: 3, left: 3),
                     child: CustomButton(
-                      onTap: () => authController.signup(emailController.text,
-                          passwordController.text, userNameController.text),
+                      onTap: () {
+                        if (emailController.text.isNotEmpty &&
+                            passwordController.text.isNotEmpty &&
+                            userNameController.text.isNotEmpty) {
+                          authController.signup(emailController.text,
+                              passwordController.text, userNameController.text);
+                        } else {
+                          Fluttertoast.showToast(msg: "Enter the Deatils");
+                        }
+                      },
                       borderRadius: 20,
                       bgColor: AppColors.loginMessage,
                       borderColor: AppColors.loginMessage,
