@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "897340758316",
+    "project_id": "camerafunction-ab6b5",
+    "storage_bucket": "camerafunction-ab6b5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:897340758316:android:9a61d1441a42f90f677489",
+        "android_client_info": {
+          "package_name": "com.example.camera_functions"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA-dGjurm99tlpJkd0hsQv4GWT3_Bq44Nw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
